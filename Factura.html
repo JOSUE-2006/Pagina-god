@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Este genera una factura</title>
+    <a href="Index.html">Volver a inicio</a><br><br>
+    <link href="Estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <form id="facturaForm">
+        <label for="Codigo">Codigo</label>
+        <input type="text" placeholder="Escriba su codigo" required>
+        
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Escriba su nombre" required name="nombre">
+        
+        <label for="Genero">Genero</label>
+        <select name="Genero">
+            <option>Masculino</option>
+            <option>Femenino</option>
+        </select>
+        
+        <label for="Productos">Productos</label>
+        <select name="Productos" id="productos">
+            <option value="10">Azúcar - Lps 10</option>
+            <option value="25">Arroz - Lps 25</option>
+            <option value="15">Maíz - Lps 15</option>
+            <option value="20">Trigo - Lps 20</option>
+            <option value="35">Frijol - Lps 35</option>
+            <option value="50">Queso - Lps 50</option>
+        </select>
+        
+        <label for="cantidad">Cantidad de productos</label>   
+        <input type="number" id="cantidad" placeholder="La cantidad de productos" required>
+        
+        <br><br>
+        <label for="Fecha">Seleccione la fecha </label>
+        <input type="date" required>
+        
+        <input type="text" placeholder="Subtotal" id="subtotal" readonly>
+        <input type="text" placeholder="Impuesto" id="impuesto" readonly>
+        <input type="text" placeholder="Total" id="total" readonly>
+        
+        <br><br>
+        <div>
+            <input type="radio" name="TipoPago" value="Credito"> Credito 
+            <br>
+            <input type="radio" name="TipoPago" value="Debito"> Debito 
+            <br>
+            <input type="radio" name="TipoPago" value="Efectivo"> Efectivo 
+            <br>
+        </div>
+    </form>
+
+    <button type="button" onclick="generarFactura()">Generar Factura</button>
+    
+    <script src="factura.js"></script>
+</body>
+</html>

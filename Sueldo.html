@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Estilo.css" rel="stylesheet" type="text/css">
+    <a href="Index.html" title="Retorna a la hoja principal">Volver al inicio</a>
+    <title>Calculadora de Sueldo</title>
+</head>
+<body>
+    <h2>Calculadora de Sueldo</h2>
+    <input type="text" id="horas" placeholder="Ingrese horas trabajadas">
+    <input type="text" id="tarifa" placeholder="Ingrese tarifa por hora">
+    <button onclick="calcularSueldo()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSueldo() {
+            let horas = document.getElementById("horas").value;
+            let tarifa = document.getElementById("tarifa").value;
+            let resultado = document.getElementById("resultado");
+            
+            if (horas === "" || tarifa === "") {
+                resultado.innerText = "Por favor, complete ambos campos.";
+                return;
+            }
+            
+            horas = parseFloat(horas);
+            tarifa = parseFloat(tarifa);
+            
+            if (isNaN(horas) || isNaN(tarifa) || horas < 0 || tarifa < 0) {
+                resultado.innerText = "Ingrese valores numéricos válidos.";
+            } else {
+                let sueldo = horas * tarifa;
+                resultado.innerText = "El sueldo total es: $" + sueldo.toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <a href="Index.html"> Volver al Inicio</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Estilo.css" rel="stylesheet" type="text/css">
+    <title>Calculadora de Raíz Cuadrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Calculadora de Raíz Cuadrada</h2>
+    <input type="text" id="numero" placeholder="Ingrese un número">
+    <button onclick="calcularRaiz()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularRaiz() {
+            let numero = document.getElementById("numero").value;
+            let resultado = document.getElementById("resultado");
+            
+            if (numero === "") {
+                resultado.innerText = "Por favor, ingrese un número válido.";
+                return;
+            }
+            
+            numero = parseFloat(numero);
+            if (isNaN(numero)) {
+                resultado.innerText = "Entrada no válida. Ingrese un número.";
+            } else if (numero < 0) {
+                resultado.innerText = "No se puede calcular la raíz cuadrada de un número negativo.";
+            } else {
+                resultado.innerText = "La raíz cuadrada de " + numero + " es " + Math.sqrt(numero).toFixed(2);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body{
+    background-color:lightblue;
+    color: black;
+        background-image: url(Imagen\ fondo.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+h1{
+    background-color:bisque ;
+    padding: 10px;
+    border-width: 5px;
+    border-radius: 20px;
+    border-style: groove;
+}
+
+button{
+    background-color:bisque;
+    padding: 6px 10px;
+    border-width: 5px;
+    border-radius: 20px;
+    border-style:groove;
+}
+
+img{
+    background-color:bisque;
+    padding: 10px 10px;
+    border-width: 15px;
+    border-radius: 80px;
+    border-style:groove;
+}
+
+input{
+    border-radius: 20px;
+}
